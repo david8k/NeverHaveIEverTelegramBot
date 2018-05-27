@@ -47,7 +47,6 @@ bot.onText(/^\!game$/i, async(msg, match) => {
         users: new Map()
     };
     games.set(id, new_game);
-    console.log(new_game);
     id++;
     await bot.sendMessage(msg.chat.id, formatGameMessage(new_game), { parse_mode: 'Markdown', reply_markup: GAME_BTNS(new_game.id) });
 });
