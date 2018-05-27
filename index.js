@@ -59,7 +59,7 @@ bot.on('callback_query', async(query) => {
         return;
     }
     if(type === 'never'){
-        game.users.set(query.from.id, { name: `${query.from.first_name} ${query.from.last_name}`, id: query.from.id, decision: 'never' });
+        game.users.set(query.from.id, { name: `${query.from.first_name || ''} ${query.from.last_name || ''}`, id: query.from.id, decision: 'never' });
         await bot.editMessageText(formatGameMessage(game), {
             chat_id: query.message.chat.id,
             message_id: query.message.message_id,
